@@ -40,7 +40,7 @@ public class Shape {
             width = sc.nextDouble();
             Rectangle rectangle = new Rectangle();
             System.out.println("Area of the Rectangle is: " + rectangle.area(length, width)); //Print Area of the Rectangle
-            System.out.println("Perimeter of the Rectangle is: " + rectangle.perimeter(length, width)); //Print Primeter of the Rectangle
+            System.out.println("Perimeter of the Rectangle is: " + rectangle.perimeter(length, width)); //Print Perimeter of the Rectangle
             
     	    break;
     	    
@@ -65,11 +65,37 @@ public class Shape {
     	        System.out.println("Kindly Enter Side of the Square:");
     	        SideOfSquare = sc.nextDouble();
     	        Square square = new Square();
-    	        sc.close();
     	        System.out.println("Area of the Square is: " + square.area(SideOfSquare)); //Print Area of the Square
-    		    System.out.println("Perimeter of the Square is: " +square.perimeter(SideOfSquare)); //Print Primeter of the Square
+    		    System.out.println("Perimeter of the Square is: " +square.perimeter(SideOfSquare)); //Print Perimeter of the Square
     		    System.out.println("Diagonal of the Square is: " +square.diagonal(SideOfSquare)); //Print Diagonal of the Square
     		    break;
+    		    
+    	 case 5: 
+    		  	double RadiusOfCylinder, HeightOfCylinder;
+    		  	
+    		  	System.out.println("Kindly Enter Radius of the Cylinder:");
+    		  	RadiusOfCylinder = sc.nextDouble();
+    		  	System.out.println("Kindly Enter Height of the Cylinder:");
+    		  	HeightOfCylinder = sc.nextDouble();
+    		  	Cylinder cylinder = new Cylinder();
+    		  	System.out.println("Lateral Surface Area of the Cylinder is: " + cylinder.lateral_surface_area(RadiusOfCylinder, HeightOfCylinder )); //Print Lateral Surface Area of the Cylinder
+    		    System.out.println("Surface Area of the Cylinder is: " +cylinder.surface_area(RadiusOfCylinder, HeightOfCylinder)); //Print Surface Area of the Cylinder
+    		    System.out.println("Volume of the Cylinder is: " +cylinder.volume(RadiusOfCylinder, HeightOfCylinder)); //Print Volume of the Cylinder
+    		    break;
+    		  	
+    	 case 6: 
+ 		  	double RadiusOfSphere;
+ 		  	
+ 		  	System.out.println("Kindly Enter Radius of the Sphere:");
+ 		  	RadiusOfSphere = sc.nextDouble();
+ 		  	Sphere sphere = new Sphere();
+ 		  	sc.close();
+ 		  	System.out.println("Diameter of the Sphere is: " + sphere.diameter(RadiusOfSphere)); //Print Diameter of the Sphere 
+ 		    System.out.println("Volume of the Sphere is: " + sphere.volume(RadiusOfSphere)); //Print Volume of the Cylinder
+ 		    System.out.println("Surface Area of the Sphere is: " +sphere.surface_area(RadiusOfSphere)); //Print Surface Area of the Cylinder
+ 		    break;
+ 		  	
+    		    
     	        
 
   
