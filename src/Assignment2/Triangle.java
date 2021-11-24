@@ -4,7 +4,7 @@ public class Triangle {
 
 	public double area(double base, double height) {
 				try {
-		            return 1/2 * (base * height ); //Return Area of the Triangle
+		            return (base * height ) / 2; //Return Area of the Triangle
 		        }
 		        catch (ArithmeticException ae) {
 		        	ae.getMessage();
@@ -13,7 +13,7 @@ public class Triangle {
 		    }
 			public double perimeter(double height, double side, double base) {
 				try {
-		            return (side + side + side); //Return Perimeter of the Triangle
+		            return (height + side + base); //Return Perimeter of the Triangle
 		        }
 		        catch (ArithmeticException ae) {
 		        	ae.getMessage();

@@ -1,5 +1,5 @@
 package Assignment2;
-
+ 
 public class Circle {
 	
 	public double diameter(double radius) {
