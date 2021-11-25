@@ -147,8 +147,8 @@ import java.util.InputMismatchException;
 	                        	throw new Exception("Height of Cylinder you enter cannot be less than 0");
 		    		  	   }
 		    		  	Cylinder cylinder = new Cylinder();
-		    		  	System.out.println("Lateral Surface Area of the Cylinder is: " + cylinder.lateral_surface_area(radiusOfCylinder, heightOfCylinder )); //Print Lateral Surface Area of the Cylinder
-		    		    System.out.println("Surface Area of the Cylinder is: " +cylinder.surface_area(radiusOfCylinder, heightOfCylinder)); //Print Surface Area of the Cylinder
+		    		  	System.out.println("Lateral Surface Area of the Cylinder is: " + cylinder.lateralSurfaceArea(radiusOfCylinder, heightOfCylinder )); //Print Lateral Surface Area of the Cylinder
+		    		    System.out.println("Surface Area of the Cylinder is: " +cylinder.surfaceArea(radiusOfCylinder, heightOfCylinder)); //Print Surface Area of the Cylinder
 		    		    System.out.println("Volume of the Cylinder is: " +cylinder.volume(radiusOfCylinder, heightOfCylinder)); //Print Volume of the Cylinder
 		    		  	}
 		    	        catch (InputMismatchException IME) {
@@ -172,7 +172,7 @@ import java.util.InputMismatchException;
 		 		  	Sphere sphere = new Sphere();
 		 		  	System.out.println("Diameter of the Sphere is: " + sphere.diameter(radiusOfSphere)); //Print Diameter of the Sphere 
 		 		    System.out.println("Volume of the Sphere is: " + sphere.volume(radiusOfSphere)); //Print Volume of the Cylinder
-		 		    System.out.println("Surface Area of the Sphere is: " +sphere.surface_area(radiusOfSphere)); //Print Surface Area of the Cylinder
+		 		    System.out.println("Surface Area of the Sphere is: " +sphere.surfaceArea(radiusOfSphere)); //Print Surface Area of the Cylinder
 	 		  	     }
 	    	        catch (InputMismatchException IME) {
                         System.out.println("Invalid Input");

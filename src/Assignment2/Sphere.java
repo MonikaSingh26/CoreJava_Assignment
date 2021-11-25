@@ -20,7 +20,7 @@ public class Sphere {
             return (0.0);
         }
     }
-	public double surface_area(double radius) {
+	public double surfaceArea(double radius) {
 		try {
             return 4 * Math.PI * (Math.pow(radius, 2)); //Return Surface Area of the Sphere
         }
