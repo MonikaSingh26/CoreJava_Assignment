@@ -13,21 +13,21 @@ import java.util.Scanner;
 
 public class Employee implements Serializable {
 
-    long ID;
+    long id;
     String name;
-    String email_address;
+    String emailAddress;
     int age;
     String dateOfBirth;
 
-    Employee(long ID, String name, String email_address, int age, String dateOfBirth) {
-        this.ID= ID;
+    Employee(long id, String name, String emailAddress, int age, String dateOfBirth) {
+        this.id = id;
         this.name = name;
-        this.email_address = email_address;
+        this.emailAddress = emailAddress;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
     }
     public String toString() {
-        return (ID+","+name+","+email_address+","+age+","+dateOfBirth);
+        return (id +","+name+","+ emailAddress +","+age+","+dateOfBirth);
     }
 }
 
@@ -35,14 +35,14 @@ class EmployeeDetails {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         File f = new File("employees.txt");
-        ArrayList<Employee> AList = new ArrayList<Employee>();
+        ArrayList<Employee> list = new ArrayList<Employee>();
         ObjectOutputStream objectoutputstream = null;
         ObjectInputStream objectinputstream = null;
         ListIterator li = null;
 
         if (f.isFile()) {
             objectinputstream = new ObjectInputStream(new FileInputStream(f));
-            AList = (ArrayList<Employee>) objectinputstream.readObject();
+            list = (ArrayList<Employee>) objectinputstream.readObject();
             objectinputstream.close();
         }
 
@@ -59,13 +59,13 @@ class EmployeeDetails {
                 case 1:
                     String name, email_address, dateOfBirth;
                     int age, num;
-                    long ID;
+                    long id;
                     System.out.println("Add Employee Details");
                     System.out.println("Enter how many Employees you want to add: ");
                     num = sc.nextInt();
                     for (int i = 0; i < num; i++) {
                         System.out.println("Enter ID Number of the Employee: ");
-                        ID = sc.nextLong();
+                        id = sc.nextLong();
                         System.out.println("Enter Name of the Employee: ");
                         name = sc.next();
                         System.out.println("Enter Email Address of the Employee: ");
@@ -74,16 +74,16 @@ class EmployeeDetails {
                         age = sc.nextInt();
                         System.out.println("Enter Date of Birth");
                         dateOfBirth = sc.next();
-                        AList.add(new Employee(ID, name, email_address, age, dateOfBirth));
+                        list.add(new Employee(id, name, email_address, age, dateOfBirth));
                     }
                     objectoutputstream = new ObjectOutputStream(new FileOutputStream(f));
-                    objectoutputstream.writeObject(AList);
+                    objectoutputstream.writeObject(list);
                     objectoutputstream.close();
                 break;
 
                 case 2:
                     System.out.println("Display Employee Details");
-                    li = AList.listIterator();
+                    li = list.listIterator();
                     while (li.hasNext())
                         System.out.println(li.next());
                 break;
@@ -93,10 +93,10 @@ class EmployeeDetails {
                     System.out.println("Search Employee Details");
                     System.out.println("Enter Employee ID Number to Search:");
                     long empID = sc.nextLong();
-                    li = AList.listIterator();
+                    li = list.listIterator();
                     while (li.hasNext()) {
                         Employee e = (Employee) li.next();
-                        if (e.ID == empID) {
+                        if (e.id == empID) {
                             System.out.println(e);
                             found = true;
                         }
@@ -112,10 +112,10 @@ class EmployeeDetails {
 
                     System.out.println("Enter Employee ID Number to Search:");
                     long delempID = sc.nextLong();
-                    li = AList.listIterator();
+                    li = list.listIterator();
                     while (li.hasNext()) {
                         Employee e = (Employee) li.next();
-                        if (e.ID == delempID) {
+                        if (e.id == delempID) {
                             li.remove();
                             found = true;
                         }
