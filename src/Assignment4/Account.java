@@ -1,8 +1,8 @@
 package Assignment4;
 
 public class Account extends Thread {
-    String name;
-    double balance;
+    public String name;
+    public double balance;
 
     Account(double balance) {
         this.balance = balance;
@@ -12,25 +12,26 @@ public class Account extends Thread {
         return balance;
     }
 
-    synchronized void safeWithdrawalAmount(double withdrawAmount) {
+    public void unsafeWithdrawalAmount(double withdrawAmount) {
         Thread t = Thread.currentThread();
-        if (getBalance() >= withdrawAmount) {
-            System.out.println("Balance Before Withdrawal Account Balance of:" + t.getName() + "is" + getBalance());
+        if (withdrawAmount <= getBalance()) {
+            System.out.println(t.getName() + "  Your Account Balance Before Withdrawal is  " + getBalance());
             balance = getBalance() - withdrawAmount;
-            System.out.println(t.getName() + "has Withdrawal Amount" + withdrawAmount + "and Remaining Balance is" + getBalance());
+            System.out.println(t.getName() + "   has Withdrawal Amount is  " + withdrawAmount + "  and your Remaining Balance is  " + getBalance());
         } else {
-            System.out.println("The amount you enter for Withdrawn is Insufficient" + t.getName());
+            System.out.println("The amount you enter for withdrawal is overdraw  " + t.getName());
         }
     }
 
-    public void unsafeWithdrawalAmount(double withdrawAmount) {
+    synchronized void safeWithdrawalAmount(double withdrawAmount) {
         Thread t = Thread.currentThread();
-        if (getBalance() >= withdrawAmount) {
-            System.out.println("Balance Before Withdraw Account Balance of:" + t.getName() + "is" + getBalance());
+        if (withdrawAmount <= getBalance()) {
+            System.out.println(t.getName() + "  Your Account Balance Before Withdrawal is  " + getBalance());
             balance = getBalance() - withdrawAmount;
-            System.out.println(t.getName() + "has Withdrawal Amount" + withdrawAmount + "and Remaining Balance is" + getBalance());
+            System.out.println(t.getName() + "   has Withdrawal Amount is  " + withdrawAmount + "  and your Remaining Balance is  " + getBalance());
         } else {
-            System.out.println("The amount you enter for Withdrawn is Insufficient" + t.getName());
+            System.out.println("The amount you enter for withdrawal is overdraw  " + t.getName());
         }
     }
 }
+
